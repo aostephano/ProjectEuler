@@ -10,9 +10,8 @@
 
 **- Flashcards questions - Checklist**
 
-- How bar codes works?
-- How Unit Tests work in Python?
-- What is RSS Feed?
+- How math Permutations work?
+- [:-1] mens in Python? asw: Slice
 
 **- English flashcards - Checklist**
 
