@@ -21,26 +21,58 @@ for line in myNewList:
     finalList.append(tempLine)
     tempLine = []
 
-print(finalList)
+auxList = []
+def greaterNumber(myNewList, lastPos):
+    firstValue = 0
+    greatAdj = 0
+    line = lastPos[0]
+    column = lastPos[1]
+    leftNumber = 0
+    rightNumber = 0
 
+    #Is the first number of the List? [0][0]
+    if line == 0 and column == 0:
+        firstValue = int(myNewList[line][column])
+        auxList.append(firstValue)
+
+    print("-----")
+    print("Actual:", myNewList[line][column])
+
+    try:
+        leftNumber = int(myNewList[line + 1][column])
+        rightNumber = int(myNewList[line + 1][column + 1])
+        print("Left:", leftNumber, "Right:", rightNumber)
+    except:
+        lastValue = 0
+        lastColumn = column+1 #go to next column
+        lastLine = line
+        lastPos = (lastLine, lastColumn)
+        return lastValue, lastPos
+
+    greatAdj += int(leftNumber if leftNumber >= rightNumber else rightNumber)
+    auxList.append(greatAdj)
+    print("Greater Value:", greatAdj)
+
+    lastColumn = column if greatAdj == leftNumber else column+1
+    lastLine = line+1
+    print("lastLine:", lastLine, "lastColumn:", lastColumn)
+
+    lastPos = (lastLine, lastColumn)
+    lastValue = (int(greatAdj)+int(firstValue))
+
+    return lastValue, lastPos
+
+lastPos = (0,0)
+auxPos = (0,0)
+lastValue = 0
 sumValue = 0
-for line in finalList:
-    print(max(line))
-    sumValue += max(line)
 
-print(sumValue)
+for line in myNewList:
+    for number in line:
+        lastValue, auxPos = greaterNumber(myNewList, lastPos)
+        lastPos = auxPos
+        sumValue += lastValue
+        break #force to go to the next line after reaching the adj greatest number
 
-# anyString = ""
-#
-# for element in data:
-#     anyString += element+" "
-#
-# tempList = anyString.split(" ")
-# tempList.pop() #remove last value
-# myFinalList = []
-# for element in tempList:
-#     myFinalList.append(int(element))
-#
-# print(myFinalList)
-#
-# print(sum(myFinalList))
+print(auxList)
+print("SumValue:", sumValue)

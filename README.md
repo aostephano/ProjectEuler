@@ -12,6 +12,8 @@
 
 - How math Permutations work?
 - [:-1] mens in Python? asw: Slice
+- How to get Lists of Lists lenght? len(myNewList[i])
+-         lineLenght = len(myNewList[i])
 
 **- English flashcards - Checklist**
 
