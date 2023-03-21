@@ -10,10 +10,8 @@
 
 **- Flashcards questions - Checklist**
 
-- How math Permutations work?
-- [:-1] mens in Python? asw: Slice
-- How to get Lists of Lists lenght? len(myNewList[i])
--         lineLenght = len(myNewList[i])
+- [:-1] means in Python? asw: Reverse order ok
+- How to get Lists of Lists lenght? len(myNewList[i]) ok
 
 **- English flashcards - Checklist**
 
