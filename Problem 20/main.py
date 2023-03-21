@@ -1,6 +1,4 @@
-# Python code to demonstrate naive method
-# to compute factorial
-
+#https://www.geeksforgeeks.org/program-for-factorial-of-a-number/
 n = 100
 fact = 1
 
